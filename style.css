@@ -1,0 +1,84 @@
+
+:root {
+  --bg: #0d0d0d;
+  --fg: #163d2e;
+  --font-main: "Courier New", Consolas, monospace;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-main);
+}
+
+.clock {
+  text-align: center;
+}
+
+.time {
+  font-size: clamp(2.5rem, 8vw, 8rem);
+  letter-spacing: 0.08em;
+}
+
+.date {
+  margin-top: 0.5em;
+  font-size: clamp(1rem, 3vw, 2rem);
+  opacity: 0.8;
+}
+
+button {
+  margin-top: 1em;
+  background: transparent;
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  padding: 0.4em 0.8em;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* ==== Overlay de boas-vindas ==== */
+.welcome {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.welcome.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.welcome-text {
+  font-family: "Courier New", Consolas, monospace;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #00ff9d;
+  white-space: nowrap;
+  position: relative;
+  padding-right: 0.5ch; /* espaço para cursor */
+}
+
+/* Cursor piscando estilo terminal */
+.welcome-text::after {
+  content: "█";
+  position: absolute;
+  right: 0;
+  animation: blink-cursor 1s step-end infinite;
+}
+
+@keyframes blink-cursor {
+  50% { opacity: 0; }
+}
+

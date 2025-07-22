@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Relógio Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Overlay de boas-vindas -->
+  <div id="welcome" class="welcome hidden" role="dialog" aria-live="polite">
+    <span class="welcome-text" id="welcome-text"></span>
+  </div>
+
+  <!-- Relógio -->
+  <div class="clock">
+    <div id="time" class="time">--:--:--</div>
+    <div id="date" class="date">--/--/----</div>
+    <button id="toggle-format" type="button">Alternar 12h/24h</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
